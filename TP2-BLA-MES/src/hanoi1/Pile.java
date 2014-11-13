@@ -37,9 +37,12 @@ public class Pile {
    /* sommet : renvoie l'element en sommet de pile * sans * le depiler
     * Leve ErreurPile si la pile est vide
     */
-   public Object sommet() throws ErreurPile {
-	   return this.pile[hauteur-1];
-    }
+    public Object sommet() throws ErreurPile {
+ 	   if(estVide()){
+ 		   throw new ErreurPile("Somment inexistant, pile vide");
+ 	   }
+ 	   return this.pile[hauteur-1];
+     }
 
     public boolean estVide() {
     	if(hauteur == 0){
