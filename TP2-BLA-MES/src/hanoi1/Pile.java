@@ -63,8 +63,8 @@ public class Pile {
 	/* Affiche les elements de la pile (un par ligne) dans l'ordre en commencant par 
 	 * l'element en sommet de pile.
 	 */
-    	for(Object d : pile){
-    		System.out.println("->"+d);
+    	for(int i=hauteur;i>0;i--){
+    		System.out.println("->"+pile[i-1]);
     	}
     }
 }

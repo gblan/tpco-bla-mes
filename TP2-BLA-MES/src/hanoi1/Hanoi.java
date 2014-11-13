@@ -11,7 +11,7 @@ public class Hanoi {
 	} catch (ErreurPile e) {}
     }
 
-    public void jouer() {
+	public void jouer() {
 	try {
 	    oneStep(depart.capacite(), depart, arrivee, milieu);
 	} catch (ErreurTour e) {
@@ -46,7 +46,7 @@ public class Hanoi {
 
 	Hanoi H = new Hanoi(6);
 	H.affiche();
-//	H.jouer();
-//	System.out.println("Situation finale:"); H.affiche();
+	H.jouer();
+	System.out.println("Situation finale:"); H.affiche();
     }
 }
