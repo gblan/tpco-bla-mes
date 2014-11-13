@@ -46,7 +46,7 @@ public class Hanoi {
 
 	Hanoi H = new Hanoi(6);
 	H.affiche();
-	H.jouer();
-	System.out.println("Situation finale:"); H.affiche();
+//	H.jouer();
+//	System.out.println("Situation finale:"); H.affiche();
     }
 }
