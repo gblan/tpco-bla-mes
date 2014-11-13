@@ -16,8 +16,7 @@ public class Tour extends Pile {
 		Disque disque = (Disque) v;
 		if (estVide()) {
 			super.empiler(v);
-		}
-		if (((Disque) sommet()).getVal() < disque.getVal()) {
+		}else if (((Disque) sommet()).getVal() < disque.getVal()) {
 			throw new ErreurTour("Disque non empilable");
 		} else {
 			super.empiler(v);
