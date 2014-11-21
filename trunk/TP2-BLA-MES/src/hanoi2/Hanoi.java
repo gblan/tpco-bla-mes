@@ -1,5 +1,8 @@
 package hanoi2;
 
+import hanoi1.ErreurPile;
+import hanoi1.ErreurTour;
+
 public class Hanoi {
 
     protected Tour depart, milieu, arrivee;
