@@ -1,6 +1,5 @@
 package hanoi2;
 
-import hanoi1.Disque;
 import hanoi1.ErreurPile;
 
 /* definit une pile d'Object de capacité fixee a l'instantiation */
@@ -15,7 +14,7 @@ public class Pile {
      */
     public Pile(int capacite) {
     	this.capacite = capacite;
-    	this.pile = new Disque[capacite];
+    	this.pile = new Object[capacite];
     	this.hauteur = 0;
     }
 
