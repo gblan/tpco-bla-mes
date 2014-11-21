@@ -1,5 +1,7 @@
 package hanoi2;
 
+import hanoi1.ErreurPile;
+
 import java.util.Scanner;
 
 public class TestHanoi {
@@ -14,12 +16,12 @@ public class TestHanoi {
 	 * ne sera pas reconnu. 
 	 * Vous pouvez modifier le motif ci-dessous si ca vous arrange
 	 */
-	String name = scan.next("\\w+");
+	String name = scan.next("(\\w+.\\w+)+");
 	Hanoi h = null;
 	try {
-	    h = new Hanoi(6, /* ?? */);
-	} catch (ErreurPile e) {
-	    System.out.println(e.getMessage());
+	    h = new Hanoi(6, Class.forName(name)/* ?? */);
+//	} catch (ErreurPile e) {
+//	    System.out.println(e.getMessage());
 	} catch (ClassCastException e) {
 	    System.out.println("ClassCastException: " + e.getMessage());
 	}
