@@ -12,7 +12,7 @@ public class Pile {
      */
     public Pile(int capacite) {
     	this.capacite = capacite;
-    	this.pile = new Disque[capacite];
+    	this.pile = new Object[capacite];
     	this.hauteur = 0;
     }
 
