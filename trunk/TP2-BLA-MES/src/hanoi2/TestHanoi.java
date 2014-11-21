@@ -16,14 +16,18 @@ public class TestHanoi {
 	 * ne sera pas reconnu. 
 	 * Vous pouvez modifier le motif ci-dessous si ca vous arrange
 	 */
-	String name = scan.next("(\\w+.\\w+)+");
+	String name = scan.next("(\\w+.)*(\\w+)");
 	Hanoi h = null;
 	try {
-	    h = new Hanoi(6, Class.forName(name)/* ?? */);
-//	} catch (ErreurPile e) {
-//	    System.out.println(e.getMessage());
+	    h = new Hanoi(6, Class.forName(name));
+	} catch (ErreurPile e) {
+	    System.out.println("ErreurPile: " + e.getMessage());
 	} catch (ClassCastException e) {
 	    System.out.println("ClassCastException: " + e.getMessage());
+	} catch (InstantiationException e) {
+	    System.out.println("InstantiationException: " + e.getMessage());
+	} catch (IllegalAccessException e) {
+	    System.out.println("IllegalAccessException: " + e.getMessage());
 	}
 	if (h != null) {
 	    System.out.println("Situation initiale:");

@@ -3,4 +3,7 @@ package hanoi2;
 
 interface Empilable extends Comparable {
    /* a definir */
+    public void init(int nb);
+    
+    public String toString();
 }
