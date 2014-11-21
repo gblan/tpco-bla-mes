@@ -34,12 +34,13 @@ public class Hanoi {
      * qu'elle renvoie, sinon le depiler qui suit n'a plus lieu d'etre
      */
     protected void oneStep(int nb, Tour D, Tour A, Tour M) throws ErreurPile {
-	if (nb > 0) {
-	    oneStep(nb-1, D, M, A);
-	    A.empiler((Disque) D.sommet());
-	    D.depiler();
-	    oneStep(nb-1, M, A, D);
-	}
+    	if (nb > 0) {
+    	    oneStep(nb-1, D, M, A);
+    	    Disque d = (Disque) D.sommet();
+    	    D.depiler();
+    	    A.empiler(d);
+    	    oneStep(nb-1, M, A, D);
+    	}
     }
 
     static public void main (String[] args) {
