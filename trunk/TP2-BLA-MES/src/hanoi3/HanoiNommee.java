@@ -1,25 +1,32 @@
 package hanoi3;
 
-public class HanoiNommee<??> extends Hanoi<??> {
+import hanoi1.ErreurPile;
+import hanoi1.ErreurTour;
 
-    public HanoiNommee(ArrayList<??> inits) {
-	super(inits);
-	int nb = inits.size();
-	depart = new TourNommee<??>(nb, "Depart");
-	milieu = new TourNommee<??>(nb, "Milieu");
-	arrivee = new TourNommee<??>(nb, "Arrivee");
-	try {
-	    for(?? o: inits) 
-		depart.empiler(o);
-	} catch (ErreurTour e) {
-	    System.out.println(e.getMessage());
-	} catch (ErreurPile e) {
-	    System.out.println(e.getMessage());
-        }
-    }
+import java.util.ArrayList;
 
-    public void affiche() {
-	depart.affiche(); milieu.affiche(); arrivee.affiche();
-    }
+public class HanoiNommee<T extends Empilable<T>> extends Hanoi<T> {
+
+	public HanoiNommee(ArrayList<T> inits) {
+		super(inits);
+		int nb = inits.size();
+		depart = new TourNommee<T>(nb, "Depart");
+		milieu = new TourNommee<T>(nb, "Milieu");
+		arrivee = new TourNommee<T>(nb, "Arrivee");
+		try {
+			for (T o : inits)
+				depart.empiler(o);
+		} catch (ErreurTour e) {
+			System.out.println(e.getMessage());
+		} catch (ErreurPile e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public void affiche() {
+		depart.affiche();
+		milieu.affiche();
+		arrivee.affiche();
+	}
 
 }

@@ -1,14 +1,16 @@
 package hanoi3;
 
-public class TourNommee<??> extends Tour<??> {
+public class TourNommee<T extends Empilable<T>> extends Tour<T> {
 
-    protected String nom;
+	protected String nom;
 
-    public TourNommee(int nb, String n) {
-	super(nb); nom = n;
-    }
+	public TourNommee(int nb, String n) {
+		super(nb);
+		nom = n;
+	}
 
-    public void affiche() {
-	System.out.println(nom + ":"); super.affiche();
-    }
+	public void affiche() {
+		System.out.println(nom + ":");
+		super.affiche();
+	}
 }
