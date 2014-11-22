@@ -77,11 +77,12 @@ public class TestHanoi {
 			h5.affiche();
 
 			ArrayList<MesEntiers3> m4 = new ArrayList<MesEntiers3>();
-			/*
-			 * Ne doit pas compiler, MesEntiers3 n'implementant pas la bonne
-			 * interface Hanoi<MesEntiers3> h6 = new
-			 * HanoiNommee<MesEntiers3>(m4);
-			 */
+			
+			/*Ne doit pas compiler, 
+			 * MesEntiers3 n'implementant pas la bonne interface
+			 */			   
+//			  Hanoi<MesEntiers3> h6 = new HanoiNommee<MesEntiers3>(m4);
+			 
 
 		} catch (ClassCastException e) {
 			System.out.println("ErreurClassCast: " + e.getMessage());
