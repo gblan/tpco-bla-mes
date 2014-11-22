@@ -13,7 +13,6 @@ public class Pile<T> {
 	private int capacite;
 
 	// suppose 'capa' strictement positif !
-
 	public Pile(int capa) {
 		this.capacite = capa;
 		this.pile = new ArrayList<T>(capa);

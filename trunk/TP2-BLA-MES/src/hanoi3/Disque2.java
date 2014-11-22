@@ -22,6 +22,10 @@ public class Disque2 extends Disque {
 	 * version de la super-classe (par exemple si on travaille sur une tour qui
 	 * melange des instances de Disque et de Disque2)
 	 */
-//	public int compareTo() {
-//	}
+	@Override
+	public int compareTo(Disque arg0) {
+		System.out.println("Disque2.compareTo");
+		return super.compareTo(arg0);
+	}
+
 }
