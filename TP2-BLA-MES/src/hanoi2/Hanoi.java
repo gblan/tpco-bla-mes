@@ -1,5 +1,6 @@
 package hanoi2;
 
+import hanoi1.Disque;
 import hanoi1.ErreurPile;
 import hanoi1.ErreurTour;
 
@@ -52,8 +53,8 @@ public class Hanoi {
 	protected void oneStep(int nb, Tour D, Tour A, Tour M) throws ErreurPile {
 		if (nb > 0) {
 			oneStep(nb - 1, D, M, A);
-			A.empiler(D.sommet());
 			D.depiler();
+			A.empiler(D.sommet());
 			oneStep(nb - 1, M, A, D);
 		}
 	}
