@@ -41,11 +41,7 @@ public class Pile<T> {
 	}
 
 	public boolean estVide() {
-		if (hauteur() == 0) {
-			return true;
-		} else {
-			return false;
-		}
+		return (hauteur() == 0);
 	}
 
 	/* renvoie le nombre actuel d'elements dans la pile */

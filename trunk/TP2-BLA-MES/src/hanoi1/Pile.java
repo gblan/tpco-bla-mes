@@ -44,13 +44,9 @@ public class Pile {
  	   return this.pile[hauteur-1];
      }
 
-    public boolean estVide() {
-    	if(hauteur == 0){
-    		return true;
-    	}else{
-    		return false;
-    	}
-    }
+	public boolean estVide() {
+		return (hauteur() == 0);
+	}
 
     /* renvoie le nombre actuel d'elements dans la pile */
     public int hauteur () {
