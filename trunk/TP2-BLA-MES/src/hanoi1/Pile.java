@@ -6,64 +6,66 @@ public class Pile {
 	private int capacite;
 	private int hauteur;
 
-    /**
-     * @param capacite
-     * on suppose que la capacite est > 0
-     */
-    public Pile(int capacite) {
-    	this.capacite = capacite;
-    	this.pile = new Object[capacite];
-    	this.hauteur = 0;
-    }
+	/**
+	 * @param capacite
+	 *            on suppose que la capacite est > 0
+	 */
+	public Pile(int capacite) {
+		this.capacite = capacite;
+		this.pile = new Object[capacite];
+		this.hauteur = 0;
+	}
 
-    public void empiler(Object v) throws ErreurPile {
-    	if(hauteur == capacite){
-    		throw new ErreurPile("Pile pleine");
-    	}
+	public void empiler(Object v) throws ErreurPile {
+		if (hauteur == capacite) {
+			throw new ErreurPile("Pile pleine");
+		}
 
-    	this.pile[hauteur] = v;
-    	hauteur++;
-    }
+		this.pile[hauteur] = v;
+		hauteur++;
+	}
 
-    /* supprime l'element en sommet de pile. Leve ErreurPile si la pile est vide */
-    public void depiler () throws ErreurPile {
-    	if(estVide()){
-    		throw new ErreurPile("Depilage impossible, pile vide");
-    	}
-    	this.pile[hauteur-1] = null;
-    	this.hauteur--;
-    }
+	/* supprime l'element en sommet de pile. Leve ErreurPile si la pile est vide */
+	public void depiler() throws ErreurPile {
+		if (estVide()) {
+			throw new ErreurPile("Depilage impossible, pile vide");
+		}
+		this.pile[hauteur - 1] = null;
+		this.hauteur--;
+	}
 
-   /* sommet : renvoie l'element en sommet de pile * sans * le depiler
-    * Leve ErreurPile si la pile est vide
-    */
-    public Object sommet() throws ErreurPile {
- 	   if(estVide()){
- 		   throw new ErreurPile("Somment inexistant, pile vide");
- 	   }
- 	   return this.pile[hauteur-1];
-     }
+	/*
+	 * sommet : renvoie l'element en sommet de pile * sans * le depiler Leve
+	 * ErreurPile si la pile est vide
+	 */
+	public Object sommet() throws ErreurPile {
+		if (estVide()) {
+			throw new ErreurPile("Somment inexistant, pile vide");
+		}
+		return this.pile[hauteur - 1];
+	}
 
 	public boolean estVide() {
 		return (hauteur() == 0);
 	}
 
-    /* renvoie le nombre actuel d'elements dans la pile */
-    public int hauteur () {
-    	return hauteur;
-    }
+	/* renvoie le nombre actuel d'elements dans la pile */
+	public int hauteur() {
+		return hauteur;
+	}
 
-    /* renvoie la capacite de la pile */
-    public int capacite () {
-    	return capacite;
-    }
+	/* renvoie la capacite de la pile */
+	public int capacite() {
+		return capacite;
+	}
 
-    public void affiche () { 
-	/* Affiche les elements de la pile (un par ligne) dans l'ordre en commencant par 
-	 * l'element en sommet de pile.
-	 */
-    	for(int i=hauteur;i>0;i--){
-    		System.out.println("->"+pile[i-1]);
-    	}
-    }
+	public void affiche() {
+		/*
+		 * Affiche les elements de la pile (un par ligne) dans l'ordre en
+		 * commencant par l'element en sommet de pile.
+		 */
+		for (int i = hauteur; i > 0; i--) {
+			System.out.println("->" + pile[i - 1]);
+		}
+	}
 }
