@@ -5,7 +5,7 @@ import hanoi1.ErreurTour;
 
 import java.util.ArrayList;
 
-public class HanoiNommee<T extends Empilable<T>> extends Hanoi<T> {
+public class HanoiNommee<T extends Empilable<? super T>> extends Hanoi<T> {
 
 	public HanoiNommee(ArrayList<T> inits) {
 		super(inits);
