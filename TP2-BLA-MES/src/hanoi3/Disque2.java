@@ -1,5 +1,10 @@
 package hanoi3;
 
+/**
+ * @author Guillaume
+ *  pas besoin d'apeller l'interface Empliable<Disque2>, car la classe ne saurait plus quel compareTo utiliser.
+ *  donc on récupere l'implementation d'empilable par héritage.
+ */
 public class Disque2 extends Disque {
 
 	private int val2;

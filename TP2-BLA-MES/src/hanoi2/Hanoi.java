@@ -1,6 +1,5 @@
 package hanoi2;
 
-import hanoi1.Disque;
 import hanoi1.ErreurPile;
 import hanoi1.ErreurTour;
 
@@ -15,12 +14,12 @@ public class Hanoi {
 		/*
 		 * initialiser la tour de depart avec nb instances de la classe
 		 * concernee
-		 */	
+		 */
 		remplir(nb, C);
 	}
-	
+
 	private void remplir(int nb, Class C) throws ErreurPile, InstantiationException, IllegalAccessException {
-		
+
 		for (; nb > 0; nb--) {
 			Empilable emp = (Empilable) C.newInstance();
 			emp.init(nb);
@@ -32,11 +31,9 @@ public class Hanoi {
 		try {
 			oneStep(depart.capacite(), depart, arrivee, milieu);
 		} catch (ErreurTour e) {
-			System.out.println("Erreur de manipulation des Tours: "
-					+ e.getMessage());
+			System.out.println("Erreur de manipulation des Tours: " + e.getMessage());
 		} catch (ErreurPile e) {
-			System.out.println("Erreur de manipulation des Piles: "
-					+ e.getMessage());
+			System.out.println("Erreur de manipulation des Piles: " + e.getMessage());
 		}
 	}
 
