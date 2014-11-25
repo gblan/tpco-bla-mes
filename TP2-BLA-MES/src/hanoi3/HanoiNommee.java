@@ -5,6 +5,11 @@ import hanoi1.ErreurTour;
 
 import java.util.ArrayList;
 
+/**
+ * @author Guillaume
+ *	classe parametrisee par T extends Empilable<? super T>, car on veux une tour d'élements  ayant une super classe empilable
+ * @param <T>
+ */
 public class HanoiNommee<T extends Empilable<? super T>> extends Hanoi<T> {
 
 	public HanoiNommee(ArrayList<T> inits) {
