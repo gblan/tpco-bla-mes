@@ -49,10 +49,12 @@ public class Hanoi {
 	// Empiler nb Disque de D vers A en se servant de M comme Tour auxiliaire
 	protected void oneStep(int nb, Tour D, Tour A, Tour M) throws ErreurPile {
 		if (nb > 0) {
-			oneStep(nb - 1, D, M, A);
-			D.depiler();
-			A.empiler(D.sommet());
-			oneStep(nb - 1, M, A, D);
+		    oneStep(nb-1, D, M, A);
+		    /* On ne peut pas etre plus precis que Empilable */
+		    Empilable o = (Empilable) D.sommet();
+		    D.depiler();
+		    A.empiler(o);
+		    oneStep(nb-1, M, A, D);
 		}
 	}
 }

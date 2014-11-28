@@ -40,7 +40,7 @@ public class Pile {
 	 */
 	public Object sommet() throws ErreurPile {
 		if (estVide()) {
-			throw new ErreurPile("Somment inexistant, pile vide");
+			throw new ErreurPile("Sommet inexistant, pile vide");
 		}
 		return this.pile[hauteur - 1];
 	}
