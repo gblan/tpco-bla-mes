@@ -12,7 +12,7 @@ public class Tour<T extends Empilable<? super T>> extends Pile<T> {
 	}
 
 	public void empiler(T v) throws ErreurPile {
-		if (sommet().compareTo(v) < 0) {
+		if (!estVide() && sommet().compareTo(v) < 0) {
 			throw new ErreurTour("Disque non empilable");
 		} else {
 			super.empiler(v);
