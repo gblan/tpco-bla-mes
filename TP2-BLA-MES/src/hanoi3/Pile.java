@@ -35,7 +35,7 @@ public class Pile<T> {
 
 	public T sommet() throws ErreurPile {
 		if (estVide()) {
-			throw new ErreurPile("Somment inexistant, pile vide");
+			throw new ErreurPile("Sommet inexistant, pile vide");
 		}
 		return this.pile.get(hauteur() - 1);
 	}
