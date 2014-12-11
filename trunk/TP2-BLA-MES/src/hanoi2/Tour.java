@@ -17,7 +17,7 @@ public class Tour extends Pile {
 			} else {
 				super.empiler(v);
 			}
-		} catch (Exception e) {
+		} catch (ErreurPile e) {
 			throw new ErreurPile("objet non empilable");
 		}
 	}
