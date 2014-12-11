@@ -17,8 +17,7 @@ public class Tour extends Pile {
 		if (!estVide() && ((Disque) sommet()).compareTo(disque) < 0) {
 			throw new ErreurTour("Disque non empilable");
 		} else {
-			super.empiler(v);
+			super.empiler(disque);
 		}
-
 	}
 }
